@@ -1,0 +1,35 @@
+'''
+Crie uma classe chamada Pessoa com os atributos nome, idade e sexo. Adicione um método chamado greeting() que imprima "Olá, meu nome é [nome] e tenho [idade] anos".
+'''
+
+class Pessoa:
+    def __init__(self,nome:str, idade: int, sexo: str):
+        self.nome:str = nome
+        self.idade:int = idade
+        self.sexo:str = sexo
+
+    def greeting(self):
+        print(f' Olá, meu nome é {self.nome} e tenho {self.idade} anos.')
+
+nome = input (f" Digite o nome da pessoa.")
+idade = input (f" Digite a idade da pessoa.")
+while not idade.isdigit():
+    print("Idade não informada ou informada de forma inválida!")
+    idade = input (f" Digite a idade da pessoa.")
+idade = int(idade)
+sexo = input (f" Digite o sexo da pessoa.")
+
+Pessoa1 = Pessoa(nome,idade,sexo)
+
+nome2 = input (f" Digite o nome da pessoa.")
+idade2 = input (f" Digite a idade da pessoa.")
+while not idade2.isdigit():
+    print("Idade não informada ou informada de forma inválida!")
+    idade2 = input (f" Digite a idade da pessoa.")
+idade2 = int(idade2)
+sexo2 = input (f" Digite o sexo da pessoa.")
+
+Pessoa2 = Pessoa(nome2,idade2,sexo2)
+
+Pessoa1.greeting()
+Pessoa2.greeting()
