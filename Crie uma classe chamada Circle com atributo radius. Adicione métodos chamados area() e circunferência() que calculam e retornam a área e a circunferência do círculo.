@@ -1,0 +1,24 @@
+'''
+Crie uma classe chamada Circle com atributo radius. Adicione métodos chamados area() e circunferência() que calculam e retornam a área e a circunferência do círculo.
+'''
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        area = 3.1415 * self.radius ** 2.00
+        print(f' A área do círculo é de {area:.2f}')
+    
+    def circunferência(self):
+        #2 x raio * diâmetro
+        diametro = self.radius / 2
+        self.circunferência = 2 * 3.14 * diametro
+        print(f' A circunferência do círculo é de {self.circunferência:.2f}')
+
+raio = input(f' Digite o raio do círculo \n')
+raio = float(raio)
+
+Circulo1 = Circle(raio)
+Circulo1.area()
+Circulo1.circunferência()
