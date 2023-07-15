@@ -1,0 +1,49 @@
+'''
+Crie uma classe chamada BankAccount com os atributos account_number e balance. Adicione métodos chamados deposit() e retire() que permitem ao usuário adicionar ou remover fundos da conta.
+'''
+
+class BankAccount:
+    def __init__(self,account_number:str, balance:float):
+        self.account_number:str = account_number
+        self.balance:float = balance
+    
+    def deposit(self):
+        print(f' O seu saldo é {self.balance:.2f}')
+        print("Informe o valor a depositar.")
+        valor_deposito = input('Informe o valor.')
+        while not valor_deposito.replace(',','').replace('.','').isdigit():
+            print('Valor inválido!')
+            valor_deposito = input('Informe o valor.')
+        valor_deposito = float(valor_deposito.replace(',','.'))
+        self.balance += float(valor_deposito)
+        print(f' Sucesso! Agora o seu saldo é {self.balance:.2f}')
+    
+    def retire(self):
+        print(f' O seu saldo é {self.balance:.2f}')
+        print("Informe o valor a sacar.")
+        valor_saque = input('Informe o valor.')
+        while float(valor_saque.replace(',','.')) > self.balance:
+            print("Você não tem saldo suficiente.")
+            print(f' O seu saldo é {self.balance:.2f}')
+            valor_saque = input('Informe o valor.')
+        while not valor_saque.replace(',','').replace('.','').isdigit():
+            print('Valor inválido!')
+            valor_saque = input('Informe o valor.')
+        valor_saque = float(valor_saque.replace(',','.'))
+        self.balance -= float(valor_saque)
+        print(f' Saque de {valor_saque} efetuado com sucesso! Agora o seu saldo é de {self.balance:.2f}')
+
+
+conta = input("Informe o número da conta.")
+saldo = input("Informe o saldo inicial.")
+while not saldo.replace(',','').replace('.','').isdigit():
+    print('Você informou um valor inválido!')
+    saldo = input("Informe o saldo inicial.")     
+saldo = float(saldo.replace(',','.'))
+
+conta1 = BankAccount(conta,float(saldo))
+
+conta1.deposit()
+print('#####################################################')
+print('    ###########################################')
+conta1.retire()
