@@ -1,0 +1,27 @@
+'''
+Crie uma classe chamada Retângulo com os atributos comprimento e largura. Adicione métodos chamados area() e perimetral() que calculam e retornam a área e o perímetro do retângulo.
+'''
+
+class Retangulo:
+    def __init__(self,comprimento:float, largura:float):
+        self.comprimento:float = comprimento
+        self.largura:float = largura
+    
+    def area(self):
+        area_calc = self.comprimento * self.largura
+        print(f' A área de {self.largura} * {self.comprimento} é igual a {area_calc}')
+    
+    def perimetral(self):
+        perimetro = (self.comprimento * 2) + (self.largura * 2)
+        print(f' O Perímetro de um retângulo com {self.largura} de largura por {self.comprimento} de comprimento é igual a {perimetro}')
+
+comprimento = input("Digite o valor do comprimento do retângulo.")
+comprimento = float(comprimento)
+largura = input("Digite o valor da largura do retângulo.")
+largura = float(largura)
+
+
+Retangulo1 = Retangulo(comprimento,largura)
+
+Retangulo1.area()
+Retangulo1.perimetral()
