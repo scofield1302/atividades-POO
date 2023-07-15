@@ -1,0 +1,31 @@
+'''
+Crie uma classe chamada Carro com os atributos marca, modelo e ano. Adicione métodos chamados start() e stop() que ligam e desligam o motor do carro.
+'''
+
+class Carro:
+    def __init__(self, marca, modelo, ano, ligado):
+        self.marca = marca
+        self.modelo = modelo
+        self.ano = ano
+        self.ligado = ligado
+    
+    def start(self):
+        self.ligado = True
+    
+    def stop(self):
+        self.ligado = False
+    
+    def verificar(self):
+        if self.ligado == True:
+            print("O carro está ligado!")
+        else:
+            print("O carro está desligado!")
+
+marca1 = input("Digite a marca do carro. \n")
+modelo1 = input("Digite o modelo do carro. \n")
+ano1 = input("Digite o ano do carro. \n")
+
+Carro1 = Carro(marca1, modelo1, ano1, False)
+
+Carro1.stop()
+Carro1.verificar()
