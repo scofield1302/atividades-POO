@@ -1,0 +1,36 @@
+'''
+Crie uma classe chamada Aluno com os atributos nome, idade e notas. Adicione um método chamado average_grade() que calcula e retorna a média das notas do aluno.
+'''
+
+class Aluno:
+    def __init__(self,nome:str, idade:int, notas:list):
+        self.nome:str = nome
+        self.idade:int = idade
+        self.notas:list = notas
+    
+    def average_grade(self):
+
+        print(f'Notas adicionadas com sucesso! A média é de {sum(self.notas)/len(self.notas):.2f}')
+
+
+nome = input(f"digite o nome do aluno \n")
+idade = input("digite a idade do aluno \n")
+list_notas = []
+qtd_notas = input("Informe a quantidade de notas a serem calculadas. \n")
+while not qtd_notas.isdigit():
+    print('Você informou um valor inválido')
+    qtd_notas = input("Informe a quantidade de notas a serem calculadas. \n")
+qtd_notas = int(qtd_notas)
+for i in range(qtd_notas):
+    print(f' Digite a {i+1}ª nota.')
+    nota = input("")
+    while not nota.replace(',','').replace('.','').isdigit():
+        print('Você informou um valor inválido')
+        print(f' Digite a {i+1}ª nota.')
+        nota = input("")
+    nota = float(nota.replace(',','.'))
+    list_notas.append(nota)
+
+Aluno1 = Aluno(nome, idade, list_notas)
+
+Aluno1.average_grade()
