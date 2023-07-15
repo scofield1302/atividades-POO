@@ -1,0 +1,24 @@
+'''
+Crie uma classe chamada Dog com os atributos nome, raça e idade. Adicione um método chamado bark() que imprima "Woof!"
+'''
+
+class Dog:
+    def __init__(self,nome:str,raça:str,idade:int):
+        self.nome:str = nome
+        self.raça:str = raça
+        self.idade:int = idade
+
+    def bark(self):
+        print('Woof!')
+
+nome = input (f" Digite o nome do cachorro.")
+idade = input (f" Digite a idade do cachorro.")
+while not idade.isdigit():
+    print("Idade não informada ou informada de forma inválida!")
+    idade = input (f" Digite a idade do cachorro.")
+idade = int(idade)
+raça = input (f" Digite a raça do cachorro.")
+
+Dog1 = Dog(nome,raça,idade)
+
+Dog1.bark()
